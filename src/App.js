@@ -1,6 +1,6 @@
 import React from "react";
 
-import Expenseitem from "./components/ExpenseItem";
+import Expenseitem from "./components/Expenses/ExpenseItem";
 
 const App = () => {
   const expenses = [
@@ -36,8 +36,10 @@ const App = () => {
   //key={expense.date.toDateString()} [ for genertaion of unique key ]
 
   return (
+    <>
+    <h2 className="Expense_list">Expense Items</h2>
     <div>
-      <h2 className="Expense_list">Expense Items</h2>
+     
 
       {expenses.map((expense, index) => {
         // console.log(
@@ -57,6 +59,8 @@ const App = () => {
       })}
 
     </div>
+    </>
+    
   );
 };
 export default App;

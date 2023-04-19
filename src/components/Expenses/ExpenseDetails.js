@@ -11,11 +11,15 @@ const ExpenseDetails = (props) => {
   const amount=props.amount
 
   return (
+  
+
     <div className='itemlist'>
       <div className='location'>{LocationOfExpenditure}</div>
       <div className='description'>{description}</div>
       <div className='amt'>Rs {amount}</div>
     </div>
+    
+   
   );
 };
 
