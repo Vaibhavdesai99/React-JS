@@ -1,7 +1,6 @@
+import React from "react";
 
-import React from 'react'
-
-import Expenseitem from './components/ExpenseItem'
+import Expenseitem from "./components/ExpenseItem";
 
 const App = () => {
   const expenses = [
@@ -40,15 +39,14 @@ const App = () => {
     <div>
       <h2 className="Expense_list">Expense Items</h2>
 
-
-      {expenses.map((expense,index) => {
-        
+      {expenses.map((expense, index) => {
         // console.log(
         //   `Expense ${index} (key=${expense.date.toDateString()}): ${expense}`  //op=>Expense 0 (key=Thu May 18 2023): [object Object]
         // );
 
         return (
           <Expenseitem
+          
             key={expense.date.toDateString()}
             LocationOfExpenditure={expense.LocationOfExpenditure}
             date={expense.date}
@@ -58,32 +56,7 @@ const App = () => {
         );
       })}
 
-      {/* <Expenseitem
-        location={expenses[0].LocationOfExpenditure}
-        date={expenses[0].date}
-        description={expenses[0].description}
-        amount={expenses[0].amount}
-      />
-      <Expenseitem
-        location={expenses[1].LocationOfExpenditure}
-        date={expenses[1].date}
-        description={expenses[1].description}
-        amount={expenses[1].amount}
-      />
-      <Expenseitem
-        location={expenses[2].LocationOfExpenditure}
-        date={expenses[2].date}
-        description={expenses[2].description}
-        amount={expenses[2].amount}
-      />
-      <Expenseitem
-        location={expenses[3].LocationOfExpenditure}
-        date={expenses[3].date}
-        description={expenses[3].description}
-        amount={expenses[3].amount}
-      /> */}
     </div>
   );
-    }
-export default App
-
+};
+export default App;
