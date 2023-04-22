@@ -7,20 +7,51 @@
     text-decoration-line: underline;
 
 }
+
+
 .expenses{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
-    margin: 100px 200px;
-    border: 4px solid black;
-    padding: 30px 50px;
+ 
+    border: 10px solid black;
+   
     border-radius: 10px;
-    background-color: rgba(70, 75, 80, 0.863);
+    
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.9);
     
     
 }
+@media screen and (max-width :600px) {
+    .expenses{
+        background-color: rgb(28, 28, 197);
+        width: auto;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 350px;
+        text-align: center;
+        
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .expenses{
+        background-color: rgb(129, 126, 120);
+        padding: 10px 10px;
+
+        width: 70%;
+        margin: 1rem auto;
+    }
+  }
+
+
+ 
+
 
 .date{
     display: flex;
@@ -31,24 +62,18 @@
     border-radius: 10px;
     color: white;
     text-align: center;
+   
     
 
 }
 
-
-
-.itemlist{
-    display: flex;
-    gap:260px;
-    
-}
 
 
 .Spend_Money_location{
     font-weight: bold;
     padding-top: 18px;
 }
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .expenses {
         flex-direction: row;
         width: 100%;
@@ -60,4 +85,4 @@
         width: 80%;
         margin:60px auto;
     }
-}
+} */

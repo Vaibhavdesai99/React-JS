@@ -11,17 +11,26 @@ import ExpenseDetails from "./ExpenseDetails";
 
 
 const Expenseitem = (props) => {
-  //console.log(props)
 
+ const clickHandler =()=>{ console.log('clicked!')}
+ 
+ const DeleteHandler =()=>{console.log('deleted')}
+
+  
   return (
+   
     <div className="expenses">
-      <ExpenseDate date={props.date} />
-      <ExpenseDetails
-        LocationOfExpenditure={props.LocationOfExpenditure}
-        description={props.description}
-        amount={props.amount}
-      />                                                                               
-    </div>
+    <ExpenseDate date={props.date} />
+    <ExpenseDetails
+      LocationOfExpenditure={props.LocationOfExpenditure}
+      description={props.description}
+      amount={props.amount}
+    />   
+    <button onClick={clickHandler}>ChangeTitle</button>  
+    <button onClick={DeleteHandler}>DeleteExpense</button>                                                                          
+  </div>
+
+  
   );
 };
 

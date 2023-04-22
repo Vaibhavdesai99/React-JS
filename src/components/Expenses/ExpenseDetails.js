@@ -12,12 +12,13 @@ const ExpenseDetails = (props) => {
 
   return (
   
-
-    <div className='itemlist'>
-      <div className='location'>{LocationOfExpenditure}</div>
+<>
+ 
+      <div className='location'>{LocationOfExpenditure} </div>
       <div className='description'>{description}</div>
       <div className='amt'>Rs {amount}</div>
-    </div>
+    
+    </>
     
    
   );
