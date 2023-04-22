@@ -1,8 +1,12 @@
 import React from "react";
 
-
+import './App.css'
 
 import Expenseitem from "./components/Expenses/ExpenseItem";
+
+import Cards from "./components/UI/Cards";
+
+
 
 const App = () => {
   const expenses = [
@@ -23,7 +27,7 @@ const App = () => {
       LocationOfExpenditure: "Shopping",
       date: new Date(2022, 4, 28),
       description: "Clothes",
-      amount: 1000,
+      amount: 800,
     },
     {
       LocationOfExpenditure: "Travelling",
@@ -40,13 +44,15 @@ const App = () => {
   return (
     <>
     <h2 className="Expense_list">Expense Items</h2>
-    <div>
+
+    {/* we change div to Cards ...so style get applied that we create in cards.css */}
+    <Cards className="background">
      
 
       {expenses.map((expense, index) => {
-        // console.log(
+      
         //   `Expense ${index} (key=${expense.date.toDateString()}): ${expense}`  //op=>Expense 0 (key=Thu May 18 2023): [object Object]
-        // );
+   
 
         return (
           <Expenseitem
@@ -60,7 +66,7 @@ const App = () => {
         );
       })}
 
-    </div>
+    </Cards>
     </>
     
   );

@@ -18,7 +18,7 @@
  
     border: 10px solid black;
    
-    border-radius: 10px;
+
     
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.9);
     
@@ -43,8 +43,8 @@
     .expenses{
         background-color: rgb(129, 126, 120);
         padding: 10px 10px;
-
-        width: 70%;
+        /* border-radius: 30px; */
+        width: 92%;
         margin: 1rem auto;
     }
   }
@@ -52,20 +52,6 @@
 
  
 
-
-.date{
-    display: flex;
-    flex-direction: column;
-    border: 2px solid black;
-    padding: 10px 20px;
-    background-color: darkblue;
-    border-radius: 10px;
-    color: white;
-    text-align: center;
-   
-    
-
-}
 
 
 

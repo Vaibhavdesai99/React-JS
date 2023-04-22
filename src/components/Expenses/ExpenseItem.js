@@ -8,6 +8,10 @@ import ExpenseDate from "./ExpenseDate";
 //imported ExpenseDetails file here:
 import ExpenseDetails from "./ExpenseDetails";
 
+import Cards from "../UI/Cards";
+
+
+
 
 
 const Expenseitem = (props) => {
@@ -19,7 +23,9 @@ const Expenseitem = (props) => {
   
   return (
    
-    <div className="expenses">
+    //we changeed div and use Cards here so all style get applied here 
+
+    <Cards className="expenses">
     <ExpenseDate date={props.date} />
     <ExpenseDetails
       LocationOfExpenditure={props.LocationOfExpenditure}
@@ -28,7 +34,7 @@ const Expenseitem = (props) => {
     />   
     <button onClick={clickHandler}>ChangeTitle</button>  
     <button onClick={DeleteHandler}>DeleteExpense</button>                                                                          
-  </div>
+  </Cards>
 
   
   );

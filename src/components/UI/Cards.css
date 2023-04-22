@@ -1,0 +1,9 @@
+
+.Card{
+    /* this is property of inside box we import this from ExpenseItem.css  */
+    border-radius: 30px;
+
+    /* below this   they are the properties of outer black box we import this from app.css   */
+    border-radius: 20px;
+    width: 84%;
+}

@@ -1,0 +1,10 @@
+.background{
+  
+    display: inline-block;
+   
+    margin: auto 6rem;
+    background-color: black;
+   
+
+    text-align: center;
+}
