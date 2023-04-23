@@ -44,8 +44,13 @@ const amountHandler =() => {
       description={props.description}
       amount={amount}
     />   
+    <div className="titlebutton">
     <button onClick={titleHandler}>ChangeTitle</button>  
-    <button onClick={amountHandler}>ChangeAmount</button>
+    </div>
+   <div className="amountbutton">
+     <button onClick={amountHandler}>ChangeAmount</button>
+   </div>
+   
                                                                          
   </Cards>
 

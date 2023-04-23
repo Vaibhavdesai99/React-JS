@@ -5,9 +5,11 @@
     margin-bottom: 3rem;
     margin-left: 13rem;
     padding: 91px 23px;
-    background-color: #21a4cf;
+    background-color: #093752;
     border-radius: 20px;
-
+    border-radius: 10% 45%;
+    color: white;
+    font-weight: bolder;
 }
 
 .form-controls{

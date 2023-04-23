@@ -13,15 +13,15 @@ import Cards from "./components/UI/Cards";
 const App = () => {
   const expenses = [
     {
-      LocationOfExpenditure: "Petrol Pump",
+      LocationOfExpenditure:"Clubbing",
       date: new Date(2023, 4, 18),
-      description: "Car Insurance",
+      description: "Pizza",
       amount: 200,
     },
     {
-      LocationOfExpenditure: "SuperMarket",
+      LocationOfExpenditure: "Market",
       date: new Date(2023, 5, 28),
-      description: "Grocessries",
+      description: "Grocery",
       amount: 900,
     },
 
@@ -34,7 +34,7 @@ const App = () => {
     {
       LocationOfExpenditure: "Travelling",
       date: new Date(2021, 2, 21),
-      description: "HomeTown",
+      description: "Home",
       amount: 700,
     },
   ];
@@ -45,8 +45,10 @@ const App = () => {
 
   return (
     <>
+     <h2 className="Expense_list">Expense Tracker</h2>
+     <h2 className="title">ADD YOUR DAILY EXPENSES HERE</h2>
     <NewExpenses/>
-    {/* <h2 className="Expense_list">Expense Items</h2> */}
+   
 
     {/* we change div to Cards ...so style get applied that we create in cards.css */}
     <Cards className="background">
