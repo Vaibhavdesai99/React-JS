@@ -1,39 +1,52 @@
-import React from "react";
+//used useState to upadte the values on UI : 
+import React , {useState} from "react";
 
 import "./ExpenseItem.css";
 
-//imported  ExpenseDate here:
+
 import ExpenseDate from "./ExpenseDate";
 
-//imported ExpenseDetails file here:
+
 import ExpenseDetails from "./ExpenseDetails";
 
 import Cards from "../UI/Cards";
 
 
 
-
-
 const Expenseitem = (props) => {
 
- const clickHandler =()=>{ console.log('clicked!')}
- 
- const DeleteHandler =()=>{console.log('deleted')}
+//to Update the Title  :- updatedLocation is async function 
+   const [location ,updatedLocation]=useState(props.LocationOfExpenditure)
 
-  
+//to Update the Amount : setAmount is async function 
+   const [amount , setAmount] = useState(props.amount)
+
+//when onClick function executed , &  call updatedLocation function re-render the component with updated value.
+ const titleHandler =() =>{
+  updatedLocation('clicked')
+  console.log(location)
+}
+
+const amountHandler =() => {
+  setAmount(100)
+  console.log(amount)
+}
+ 
+
   return (
    
-    //we changeed div and use Cards here so all style get applied here 
+    //we changed div and use Cards here so all style get applied here 
 
     <Cards className="expenses">
     <ExpenseDate date={props.date} />
     <ExpenseDetails
-      LocationOfExpenditure={props.LocationOfExpenditure}
+      LocationOfExpenditure={location}
       description={props.description}
-      amount={props.amount}
+      amount={amount}
     />   
-    <button onClick={clickHandler}>ChangeTitle</button>  
-    <button onClick={DeleteHandler}>DeleteExpense</button>                                                                          
+    <button onClick={titleHandler}>ChangeTitle</button>  
+    <button onClick={amountHandler}>ChangeAmount</button>
+                                                                         
   </Cards>
 
   
