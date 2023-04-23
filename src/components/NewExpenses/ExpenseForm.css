@@ -1,0 +1,61 @@
+.expense-form{
+    border: 5px solid black;
+    width: 60%;
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+    margin-left: 13rem;
+    padding: 91px 23px;
+    background-color: #21a4cf;
+    border-radius: 20px;
+
+}
+
+.form-controls{
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.form-input-amount{
+    margin-left: 24rem;
+    
+    margin-top: -4rem;
+}
+.addExpenseButton{
+    position: relative;
+    top: 13px;
+    left: 34rem;
+}
+
+.btn{
+    padding: 7px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    background: red;
+    color: white;
+}
+
+.form-input-date{
+    position: relative;
+    top: 43px;
+}
+
+
+input[type='text']{
+
+    padding: 5px 14px;
+    border-radius: 4px;
+
+}
+
+
+input[type="date"]{
+    padding: 5px 40px;
+    border-radius: 4px;
+}
+
+input[type="number"]{
+    padding: 5px 14px;
+    border-radius: 4px;
+
+}

@@ -4,6 +4,8 @@ import './App.css'
 
 import Expenseitem from "./components/Expenses/ExpenseItem";
 
+import NewExpenses from "./components/NewExpenses/NewExpenses";
+
 import Cards from "./components/UI/Cards";
 
 
@@ -43,7 +45,8 @@ const App = () => {
 
   return (
     <>
-    <h2 className="Expense_list">Expense Items</h2>
+    <NewExpenses/>
+    {/* <h2 className="Expense_list">Expense Items</h2> */}
 
     {/* we change div to Cards ...so style get applied that we create in cards.css */}
     <Cards className="background">
