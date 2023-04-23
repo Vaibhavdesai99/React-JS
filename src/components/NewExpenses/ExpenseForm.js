@@ -1,26 +1,33 @@
-import React from "react";
+import React ,{useState} from "react";
 
 import './ExpenseForm.css'
 
 const ExpenseForm = () => {
 
-const titleHandler =(e)=>{
+//here we use useState for three diff input fields:
 
-     console.log(e.target.value)
+const[enteredtitle,updatedTitle] = useState('')
+const[enteredamount,updatedAmount] = useState('')
+const[enteredate,updatedDate] = useState('')
+
+
+
+const titleHandler =(event)=>{
+
+  updatedTitle(event.target.value)
 
 }
 
-const amountHandler =(e) =>{
+const amountHandler =(event) =>{
 
-    console.log(e.target.value)
+  updatedAmount(event.target.value)
 
 }
 
-const dateHandler =(e)=>{
+const dateHandler =(event)=>{
 
-    console.log(e.target.value)
+  updatedDate(event.target.value)
 }
-
 
 
 
@@ -31,17 +38,17 @@ const dateHandler =(e)=>{
       <div className="form-controls">
         <div className="form-input">
           <label>ExpenseTitle : </label>
-          <input type="text" onChange={titleHandler}></input>
+          <input type="text" onChange={titleHandler} value={enteredtitle}></input>
         </div>
 
         <div className="form-input-amount">
           <label>ExpenseAmount : </label>
-          <input type="number" onChange={amountHandler}></input>
+          <input type="number" onChange={amountHandler} value={enteredamount}></input>
         </div>
 
         <div className="form-input-date">
           <label>ExpenseDate : </label>
-          <input type="date" onChange={dateHandler}></input>
+          <input type="date" onChange={dateHandler} value={enteredate}></input>
         </div>
       </div>
       <div className="addExpenseButton"> 
