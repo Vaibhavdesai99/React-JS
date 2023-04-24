@@ -1,62 +1,41 @@
-//used useState to upadte the values on UI : 
-import React , {useState} from "react";
+//used useState to upadte the values on UI :
+import React, { useState } from "react";
 
 import "./ExpenseItem.css";
 
-
 import ExpenseDate from "./ExpenseDate";
-
 
 import ExpenseDetails from "./ExpenseDetails";
 
 import Cards from "../UI/Cards";
 
-
-
 const Expenseitem = (props) => {
+  const [title, updatedTitle] = useState(props.title);
 
-//to Update the Title  :- updatedLocation is async function 
-   const [location ,updatedLocation]=useState(props.LocationOfExpenditure)
+  const [amount, setAmount] = useState(props.amount);
 
-//to Update the Amount : setAmount is async function 
-   const [amount , setAmount] = useState(props.amount)
+  const titleHandler = () => {
+    updatedTitle("Changed");
+  };
 
-//when onClick function executed , &  call updatedLocation function re-render the component with updated value.
- const titleHandler =() =>{
-  updatedLocation('clicked')
-  console.log(location)
-}
-
-const amountHandler =() => {
-  setAmount(100)
-  console.log(amount)
-}
- 
+  const amountHandler = () => {
+    setAmount(100);
+  };
 
   return (
-   
-    //we changed div and use Cards here so all style get applied here 
+    //we changed div and use Cards here so all style get applied here
 
     <Cards className="expenses">
-    <ExpenseDate date={props.date} />
-    <ExpenseDetails
-      LocationOfExpenditure={location}
-      description={props.description}
-      amount={amount}
-    />   
-    <div className="titlebutton">
-    <button onClick={titleHandler}>ChangeTitle</button>  
-    </div>
-   <div className="amountbutton">
-     <button onClick={amountHandler}>ChangeAmount</button>
-   </div>
-   
-                                                                         
-  </Cards>
-
-  
+      <ExpenseDate date={props.date} />
+      <ExpenseDetails title={title} amount={amount} />
+      <div className="titlebutton">
+        <button onClick={titleHandler}>ChangeTitle</button>
+      </div>
+      <div className="amountbutton">
+        <button onClick={amountHandler}>ChangeAmount</button>
+      </div>
+    </Cards>
   );
 };
 
 export default Expenseitem;
-
