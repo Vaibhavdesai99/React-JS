@@ -39,15 +39,26 @@ const App = () => {
     },
   ];
 
-  //If you have 100 expenses you would have to write ExpenseItems Component 100 times??.....instead of this we use map() here
+//Receiving the data from NewExpenses.js
+  const addExpenseHandler =(expense)=>{
 
-  //key={expense.date.toDateString()} [ for genertaion of unique key ]
+    const receiveddata = {
+      ...expense
+    }
+      console.log(receiveddata)
+
+  }
+
+
+  //If you have 100 expenses you would have to write ExpenseItems Component 100 times??.....instead of this we use map() here
 
   return (
     <>
      <h2 className="Expense_list"> - - Expense Tracker - -</h2>
      <h2 className="title">ADD YOUR DAILY EXPENSES HERE : </h2>
-    <NewExpenses/>
+
+
+    <NewExpenses  onAddExpenses={addExpenseHandler}/>
    
 
     {/* we change div to Cards ...so style get applied that we create in cards.css */}

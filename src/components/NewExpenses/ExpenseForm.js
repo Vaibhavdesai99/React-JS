@@ -2,7 +2,7 @@ import React ,{useState} from "react";
 
 import './ExpenseForm.css'
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
 //here we use useState for three diff input fields:
 
@@ -42,10 +42,18 @@ event.preventDefault()
       date: new Date(enteredate)
    }
 
-      console.log(formData)
+//sending the data to NewExpenses.js
+   props.onSaveExpenseData(formData)
 
+     //clearing the input fields : 
+      updatedTitle('')
+      updatedAmount('')
+      updatedDate('')
 
 }
+
+
+
 
   return (
 <>
