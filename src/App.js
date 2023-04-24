@@ -45,8 +45,8 @@ const App = () => {
 
   return (
     <>
-     <h2 className="Expense_list">Expense Tracker</h2>
-     <h2 className="title">ADD YOUR DAILY EXPENSES HERE</h2>
+     <h2 className="Expense_list"> - - Expense Tracker - -</h2>
+     <h2 className="title">ADD YOUR DAILY EXPENSES HERE : </h2>
     <NewExpenses/>
    
 

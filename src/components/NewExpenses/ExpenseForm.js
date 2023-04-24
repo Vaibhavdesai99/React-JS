@@ -27,13 +27,29 @@ const amountHandler =(event) =>{
 const dateHandler =(event)=>{
 
   updatedDate(event.target.value)
+
 }
 
+//onSubmit event , when user click on Additem , data get stored in Object and log it.
+const formsubmited = (event) => {
 
+event.preventDefault()
+ 
+ const formData ={
+  
+      title: enteredtitle,
+      amount: enteredamount,
+      date: new Date(enteredate)
+   }
+
+      console.log(formData)
+
+
+}
 
   return (
 <>
-<form>
+<form onSubmit={formsubmited}>
 <div className="expense-form">
       <div className="form-controls">
         <div className="form-input">
