@@ -7,16 +7,10 @@ import ExpenseDate from "./ExpenseDate";
 
 import ExpenseDetails from "./ExpenseDetails";
 
-import ExpenseFilter from "./ExpenseFilter";
-
 import Cards from "../UI/Cards";
 
 const Expenseitem = (props) => {
-  const [filteredYear, selectedFilteredYear] = useState("2020");
-
-  const FilterChangeHandler = (selectedYear) => {
-    selectedFilteredYear(selectedYear);
-  };
+  //console.log(props);
 
   //title change
   const [title, updatedTitle] = useState(props.title);
@@ -35,20 +29,18 @@ const Expenseitem = (props) => {
   return (
     //we changed div and use Cards here so all style get applied here
 
-    <Cards className="expenses">
-      <ExpenseFilter
-        selected={filteredYear}
-        onChangeFilter={FilterChangeHandler}
-      />
-      <ExpenseDate date={props.date} />
-      <ExpenseDetails title={title} amount={amount} />
-      <div className="titlebutton">
-        <button onClick={titleHandler}>ChangeTitle</button>
-      </div>
-      <div className="amountbutton">
-        <button onClick={amountHandler}>ChangeAmount</button>
-      </div>
-    </Cards>
+    <>
+      <Cards className="expenses">
+        <ExpenseDate date={props.date} />
+        <ExpenseDetails title={title} amount={amount} />
+        <div className="titlebutton">
+          <button onClick={titleHandler}>ChangeTitle</button>
+        </div>
+        <div className="amountbutton">
+          <button onClick={amountHandler}>ChangeAmount</button>
+        </div>
+      </Cards>
+    </>
   );
 };
 

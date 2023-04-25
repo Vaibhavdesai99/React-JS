@@ -8,6 +8,8 @@ import NewExpenses from "./components/NewExpenses/NewExpenses";
 
 import Cards from "./components/UI/Cards";
 
+import ExpenseFilter from "./components/Expenses/ExpenseFilter";
+
 const Dummy_expenses = [
   {
     date: new Date(2023, 4, 18),
@@ -33,6 +35,12 @@ const Dummy_expenses = [
 ];
 
 const App = () => {
+  const [filteredYear, selectedFilteredYear] = useState("2020");
+
+  const FilterChangeHandler = (selectedYear) => {
+    selectedFilteredYear(selectedYear);
+  };
+
   //passed the arrayOfObject in useState : Dummy_expenses data  get stored in expenses variable
 
   const [expenses, setExpenses] = useState(Dummy_expenses);
@@ -55,6 +63,11 @@ const App = () => {
 
       {/* we change div to Cards ...so style get applied that we create in cards.css */}
       <Cards className="background">
+        <ExpenseFilter
+          selected={filteredYear}
+          onChangeFilter={FilterChangeHandler}
+        />
+
         {expenses.map((expense, index) => {
           return (
             <Expenseitem
