@@ -12,12 +12,12 @@ import ExpenseFilter from "./components/Expenses/ExpenseFilter";
 
 const Dummy_expenses = [
   {
-    date: new Date(2023, 4, 18),
+    date: new Date(2020, 4, 18),
     title: "Pizza",
     amount: 200,
   },
   {
-    date: new Date(2023, 5, 28),
+    date: new Date(2020, 5, 28),
     title: "Grocery",
     amount: 900,
   },
@@ -37,22 +37,22 @@ const Dummy_expenses = [
 const App = () => {
   const [filteredYear, selectedFilteredYear] = useState("2020");
 
+  const [expenses, setExpenses] = useState(Dummy_expenses);
+
+  //the old data + new data :
+  const addExpenseHandler = (expense) => {
+    const updatdExpenses = [expense, ...expenses];
+    setExpenses(updatdExpenses);
+  };
+
   const FilterChangeHandler = (selectedYear) => {
     selectedFilteredYear(selectedYear);
   };
 
-  //passed the arrayOfObject in useState : Dummy_expenses data  get stored in expenses variable
-
-  const [expenses, setExpenses] = useState(Dummy_expenses);
-
-  //Here expense we get data from form and we use ...spread operator to get the Dummy_expenses data as well.
-  const addExpenseHandler = (expense) => {
-    const updatdExpenses = [expense, ...expenses];
-
-    setExpenses(updatdExpenses);
-  };
-
-  //If you have 100 expenses you would have to write ExpenseItems Component 100 times??.....instead of this we use map() here
+  // Filter the expenses based on the selected year
+  const filteredExpenses = expenses.filter(
+    (expense) => expense.date.getFullYear().toString() === filteredYear
+  );
 
   return (
     <>
@@ -68,7 +68,7 @@ const App = () => {
           onChangeFilter={FilterChangeHandler}
         />
 
-        {expenses.map((expense, index) => {
+        {filteredExpenses.map((expense, index) => {
           return (
             <Expenseitem
               key={expense.date.toDateString()}
