@@ -2,13 +2,13 @@ import React, { useState } from "react";
 
 import "./App.css";
 
-import Expenseitem from "./components/Expenses/ExpenseItem";
-
 import NewExpenses from "./components/NewExpenses/NewExpenses";
 
 import Cards from "./components/UI/Cards";
 
 import ExpenseFilter from "./components/Expenses/ExpenseFilter";
+
+import ExpenseList from "./components/Expenses/ExpenseList";
 
 const Dummy_expenses = [
   {
@@ -54,38 +54,6 @@ const App = () => {
     (expense) => expense.date.getFullYear().toString() === filteredYear
   );
 
-  //Here we assign map() to variable : When the list has only a single Element, below that expense list show a message stating "Only single Expense here. Please add more..."
-  let expenseContent = filteredExpenses.map((expense, index) => {
-    return (
-      <Expenseitem
-        key={expense.date.toDateString()}
-        date={expense.date}
-        title={expense.title}
-        amount={expense.amount}
-      />
-    );
-  });
-
-  //checking condition here:
-  if (expenseContent.length === 0) {
-    expenseContent = <p>No expenses found.</p>;
-  } else if (expenseContent.length === 1) {
-    expenseContent = (
-      <div>
-        {expenseContent}
-        <p>Only single Expense here. Please add more...</p>
-      </div>
-    );
-  }
-
-  // OR =>    We can follow below approach also
-
-  //   if (expenseContent.length === 1) {
-  //   expenseContent.push(
-  //     <p key="message">Only single Expense here. Please add more...</p>
-  //   );
-  // }
-
   return (
     <>
       <h2 className="Expense_list"> - - Expense Tracker - -</h2>
@@ -95,14 +63,18 @@ const App = () => {
       <NewExpenses onAddExpenses={addExpenseHandler} />
 
       {/* we change div to Cards ...so style get applied that we create in cards.css */}
-      <Cards className="background">
-        <ExpenseFilter
-          selected={filteredYear}
-          onChangeFilter={FilterChangeHandler}
-        />
 
-        {expenseContent}
-      </Cards>
+      <li>
+        <Cards className="background">
+          <ExpenseFilter
+            selected={filteredYear}
+            onChangeFilter={FilterChangeHandler}
+          />
+
+          {/* here we extract list logic into ExpenseList.js */}
+          <ExpenseList items={filteredExpenses} />
+        </Cards>
+      </li>
     </>
   );
 };

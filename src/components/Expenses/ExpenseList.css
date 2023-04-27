@@ -1,0 +1,8 @@
+.Expense_List_Style {
+  color: white;
+}
+
+.expenses_list {
+  padding: 0;
+  list-style: none;
+}
