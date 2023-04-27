@@ -1,0 +1,36 @@
+.add_expenses {
+  position: relative;
+  left: 544px;
+  padding: 20px 20px;
+  position: relative;
+  left: 544px;
+  padding: 20px 20px;
+  font-family: emoji;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.add_expenses {
+  background-image: linear-gradient(
+    90deg,
+    #fa8bff 0%,
+    #2bd2ff 50%,
+    #2bff88 75%,
+    #fa8bff 100%
+  );
+  color: black;
+  animation: slide 1s linear infinite;
+}
+
+@keyframes slide {
+  100% {
+    background-position: 20rem;
+  }
+}
+/* 
+.newExpense {
+  background-color: cadetblue;
+  width: 50%;
+  position: relative;
+  left: 300px;
+} */

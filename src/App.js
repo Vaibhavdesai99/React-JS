@@ -23,19 +23,29 @@ const Dummy_expenses = [
   },
 
   {
-    date: new Date(2022, 4, 28),
+    date: new Date(2021, 4, 28),
     title: "Clothes",
     amount: 800,
   },
   {
-    date: new Date(2021, 2, 21),
-    title: "Home",
+    date: new Date(2023, 2, 21),
+    title: "Juice",
+    amount: 700,
+  },
+  {
+    date: new Date(2023, 3, 11),
+    title: "Car",
+    amount: 700,
+  },
+  {
+    date: new Date(2023, 12, 12),
+    title: "Bike",
     amount: 700,
   },
 ];
 
 const App = () => {
-  const [filteredYear, selectedFilteredYear] = useState("2020");
+  const [filteredYear, selectedFilteredYear] = useState("2023");
 
   const [expenses, setExpenses] = useState(Dummy_expenses);
 
@@ -57,7 +67,6 @@ const App = () => {
   return (
     <>
       <h2 className="Expense_list"> - - Expense Tracker - -</h2>
-      <h2 className="title">ADD YOUR DAILY EXPENSES HERE : </h2>
 
       {/* get data from child to parent: */}
       <NewExpenses onAddExpenses={addExpenseHandler} />

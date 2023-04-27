@@ -1,30 +1,20 @@
-.background{
-    display: inline-block; 
-    margin: auto 6rem;
-    background-color: rgb(27, 26, 26);
-    text-align: center;
-    border: 3px solid white;
+.background {
+  display: inline-block;
+  margin: auto 6rem;
+  background-color: rgb(27, 26, 26);
+  text-align: center;
+  border: 3px solid white;
 }
 
-.Expense_list{
-
+.Expense_list {
   text-align: center;
   margin: 1rem;
   font-weight: bold;
   font-size: x-large;
   /* text-decoration-line: underline; */
   position: relative;
-  top: 62px;
+  top: 4px;
   color: white;
-}
-
-
-
-.title{
-  position: relative;
-    left: 238px;
-    top: 172px;
-    color: rgb(17, 16, 16);
 }
 
 /* 
@@ -47,11 +37,14 @@
 } */
 
 .Expense_list {
-    animation: marquee 20s linear infinite;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
   }
-  
-  @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+  100% {
+    transform: translateX(-100%);
   }
-  
+}
