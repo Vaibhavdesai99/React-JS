@@ -10,6 +10,8 @@ import ExpenseFilter from "./components/Expenses/ExpenseFilter";
 
 import ExpenseList from "./components/Expenses/ExpenseList";
 
+import ExpenseChart from "./components/Expenses/ExpensesChart";
+
 const Dummy_expenses = [
   {
     date: new Date(2020, 4, 18),
@@ -29,23 +31,33 @@ const Dummy_expenses = [
   },
   {
     date: new Date(2023, 2, 21),
-    title: "Juice",
+    title: "Fruits",
     amount: 700,
   },
   {
     date: new Date(2023, 3, 11),
     title: "Car",
-    amount: 700,
+    amount: 900,
   },
   {
     date: new Date(2023, 12, 12),
     title: "Bike",
     amount: 700,
   },
+  {
+    date: new Date(2023, 12, 12),
+    title: "Juice",
+    amount: 300,
+  },
+  {
+    date: new Date(2023, 12, 12),
+    title: "Travel",
+    amount: 150,
+  },
 ];
 
 const App = () => {
-  const [filteredYear, selectedFilteredYear] = useState("2023");
+  const [filteredYear, selectedFilteredYear] = useState("2020");
 
   const [expenses, setExpenses] = useState(Dummy_expenses);
 
@@ -80,6 +92,7 @@ const App = () => {
             onChangeFilter={FilterChangeHandler}
           />
 
+          <ExpenseChart expenses={filteredExpenses} />
           {/* here we extract list logic into ExpenseList.js */}
           <ExpenseList items={filteredExpenses} />
         </Cards>
